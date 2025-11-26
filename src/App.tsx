@@ -29,12 +29,10 @@ function App() {
   if (!accepted) {
     return (
       <PrimeReactProvider>
-        <BrowserRouter basename="standard">
-          <Routes>
-            <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
-            <Route path="*" element={<Navigate to="/"/>}/>
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
+          <Route path="*" element={<Navigate to="/"/>}/>
+        </Routes>
       </PrimeReactProvider>
     );
   };
@@ -42,15 +40,13 @@ function App() {
   return (
     <PrimeReactProvider>
     <BasketProvider>
-      <BrowserRouter basename="/standard">
-        <Routes>
-          <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
-          <Route path="/store" element={<StoreScreen />} />
-          <Route path="/store/:id" element={<ItemScreen />} />
-          <Route path="/checkout" element={<CheckoutScreen />} />
-          <Route path="*" element={<NotFound />}/>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
+        <Route path="/store" element={<StoreScreen />} />
+        <Route path="/store/:id" element={<ItemScreen />} />
+        <Route path="/checkout" element={<CheckoutScreen />} />
+        <Route path="*" element={<NotFound />}/>
+      </Routes>
     </BasketProvider>
     </PrimeReactProvider>
   );
