@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom'
 import StoreScreen from './features/store/pages/StoreScreen'
 import NotFound from './features/store/pages/404'
 import ItemScreen from './features/store/pages/ItemScreen'
@@ -29,10 +29,12 @@ function App() {
   if (!accepted) {
     return (
       <PrimeReactProvider>
-        <Routes>
-          <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
-          <Route path="*" element={<Navigate to="/"/>}/>
-        </Routes>
+        <BrowserRouter basename="standard">
+          <Routes>
+            <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
+            <Route path="*" element={<Navigate to="/"/>}/>
+          </Routes>
+        </BrowserRouter>
       </PrimeReactProvider>
     );
   };
@@ -40,13 +42,15 @@ function App() {
   return (
     <PrimeReactProvider>
     <BasketProvider>
-      <Routes>
-        <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
-        <Route path="/store" element={<StoreScreen />} />
-        <Route path="/store/:id" element={<ItemScreen />} />
-        <Route path="/checkout" element={<CheckoutScreen />} />
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
+      <BrowserRouter basename="/standard">
+        <Routes>
+          <Route path="/" element={<LandingScreen acceptDisclaimer={acceptDisclaimer} />} />
+          <Route path="/store" element={<StoreScreen />} />
+          <Route path="/store/:id" element={<ItemScreen />} />
+          <Route path="/checkout" element={<CheckoutScreen />} />
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
     </BasketProvider>
     </PrimeReactProvider>
   );
