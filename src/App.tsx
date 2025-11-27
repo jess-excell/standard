@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import StoreScreen from './features/store/pages/StoreScreen'
 import NotFound from './features/store/pages/404'
 import ItemScreen from './features/store/pages/ItemScreen'
