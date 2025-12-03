@@ -9,15 +9,15 @@ Just to reiterate...
 - By using this repo, you acknowledge that you are accessing a non-functional demo and agree to use it at your own discretion. If you have any questions, please raise an issue on GitHub.
 
 ## Getting Started
-You can try out this system at [LINK](LINK). Please note you need to read and accept a short disclaimer explaining that this is not a real ecommmerce system before you can access the prototype.
+You can try out this system [here](https://jess-excell.github.io/standard/). Please note you need to read and accept a short disclaimer explaining that this is not a real ecommmerce system before you can access the prototype.
 
 Alternatively, you can clone the repo, install the dependencies and run the system on your own machine by following the steps below.
 
 ```sh
-git clone [repo] # Clone the repo
+git clone https://github.com/jess-excell/standard/ # Clone the repo
 ```
 ```sh
-cd ecommerce # Change directory to the program
+cd standard # Change directory to the program
 ```
 ```sh
 npm i # Install the required dependencies
