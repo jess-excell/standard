@@ -1,0 +1,345 @@
+/* #region Global */
+button {
+    font-size: 14px;
+    margin: 2px;
+}
+
+.numberInput button {
+    margin: 0;
+}
+
+.numberInput input {
+    max-width: 85px;
+    text-align: center;
+    max-height: 30px;
+}
+
+.heading {
+    box-shadow: 0 0 5px grey;
+    background-color: white;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    height: 85px;
+    position: fixed;
+    text-align: left;
+    padding-left: 30px;
+    z-index: 999;
+}
+
+.heading h1 * {
+    vertical-align: middle;
+}
+
+.heading h1 span {
+    font-size: xx-large;
+    margin: auto;
+}
+
+.heading h1 p {
+    display: inline;
+    padding-left: 10px;
+}
+/* #endregion */
+
+/* #region Cards */
+/* Detail cards are used for store/<id> page only. */
+.detail-card {
+    max-width: 900px;
+    min-width: 600px;
+    width: 70%;
+    margin: auto;
+    justify-self: center;
+}
+
+.detail-card img {
+    max-width: 500px;
+    min-width: none;
+    max-height: 450px;
+}
+
+.detail-card .chip-container, .detail-card p {
+    display: block;
+}
+
+/* Checkout cards are used on the checkout screen only, not in the cart sidebar*/
+.checkout-card {
+    margin: 20px;
+    justify-self: center;
+    max-width: 1000px;
+    width: 80%;
+}
+
+.checkout-card-content {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.checkout-card-content img {
+    max-width: 200px;
+    max-height: 200px;
+    height: 200px;
+    vertical-align: middle;
+    margin: auto;
+}
+
+/* List cards are used on the main store page.*/
+.list-card {
+    margin: 10px;
+    max-width: 300px;
+}
+
+.list-card .p-card-body {
+    height: 100%;
+}
+
+.list-card .p-card-body .p-card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-card img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+.list-card p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.list-card .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: auto
+}
+
+/* Cart cards are used in the cart sidebar. */
+.cart-card {
+    max-width: 250px;
+}
+
+.cart-card img {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.cart-card .information {
+    max-width: 150px;
+}
+
+.cart-card button, .cart-card p {
+    display: inline;
+    margin: 5px;
+    vertical-align: middle;
+    padding: 5px 0;
+}
+
+.cart-card .numberInput {
+    max-width: 120px;
+}
+
+.cart-card .remove-button {
+    flex: 1;
+    height: 40px;
+}
+
+.cart-card .numberInput input {
+    max-width: 60px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.cart-card .numberInput button {
+    max-height: 25px;
+    margin: 0;
+}
+/* #endregion */
+
+/* #region Cart Sidebar */
+.cart {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100%;
+    box-shadow: -5px 0px 5px #ddd;
+    top: 85px; /* must match height of heading so cart doesn't overlap heading*/
+    right: 0;
+    margin-left: 5px;
+    position: fixed;
+    padding: 30px 5px;
+    justify-items: center;
+    background-color: #fff;
+}
+
+.cart .items {
+    overflow-y: auto;
+    height: auto;
+    max-height: calc(100vh - 270px);
+    padding: 5px;
+}
+
+.cart .total {
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    bottom: 0;
+    position: fixed;
+    width: 300px;
+}
+
+.cart .total button, .cart .total p {
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* #endregion */
+
+/* #region Filter Sidebar */
+.filter-wrapper {
+    transition: 0.2s ease-in-out;
+}
+
+.filter-menu {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100%;
+    top: 85px; /* must match height of heading so cart doesn't overlap heading*/
+    left: 0;
+    position: fixed;
+    justify-items: start;
+    text-align: left;
+    margin-right: 5px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: -5px 0px 5px #ddd;
+}
+
+.filter-menu button {
+    padding: 10px;
+}
+
+.filter-menu .p-checkbox-box {
+    padding: 5px;
+}
+
+.filter-menu .checkbox-label {
+    padding: 5px;
+}
+/* #endregion */
+
+/* #region Screens */
+/* #region Checkout */
+.checkout {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: auto 300px;
+    left: 0;
+}
+
+.checkout .summary {
+    background-color: white;
+    right: 0;
+    position: fixed;
+    width: 300px;
+    padding: 20px;
+    min-height: 100%;
+}
+
+.checkout .summary .items {
+    max-height: calc(100vh - 350px);
+    overflow-y: scroll;
+}
+/* #endregion */
+/* #region Store */
+.list {
+    display: grid;
+    padding-top: 60px;
+    transition: 0.2s ease-in-out;
+    grid-template-columns: repeat(auto-fill, 300px);
+    margin: auto;
+    justify-content: center;
+    align-items: stretch;
+}
+/* #endregion */
+/* #region Detail */
+.item-screen {
+    width: calc(100% - 310px);
+    height: calc(100% - 610px);
+    padding-top: 60px;
+    display: table;
+}
+
+.item-screen .wrapper {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.item-screen .related-items-wrapper {
+    margin: auto;
+    justify-self: center;
+}
+
+.item-screen .related-items-wrapper .related-items {
+    max-width: calc(100% - 310px);
+}
+
+.item-screen .related-items-wrapper .related-items h2 {
+    padding-top: 30px;
+}
+
+/* #endregion */
+/* #endregion */
+
+/* #region Media Queries */
+
+
+@media screen and (max-width: 1400px) {
+    .checkout-card-content {
+        grid-template-columns: auto;
+    }
+    
+    .checkout-card-content img {
+        justify-self: center;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .cart {
+        max-width: 200px;
+        padding: 10px;
+        min-width: 200px;
+        max-height: 60vh;
+    }
+
+    .cart .total {
+        width: 200px;
+    }
+    
+    .item-screen {
+        width: calc(100% - 260px);
+    }
+
+    .list-card img {
+        max-width: 160px;
+    }
+
+    .list-card {
+        max-width: 200px;
+    }
+}
+
+@media screen and (pointer:none), (pointer:coarse) {
+    .list {
+        grid-template-columns: 100%;
+    }
+    .list-card {
+        max-width: 450px;
+        margin: 10px auto;
+    }
+}
+/* #endregion */
