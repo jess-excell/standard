@@ -21,7 +21,7 @@ export default function ItemCard({item, addItem}: props) {
         <Card className="list-card">
             <h3>{item.title} £{item.price.toFixed(2)}</h3>
             {!loaded && <ProgressSpinner/> }
-            <img src={item.image} alt="Image of the product" onLoad={() => setLoaded(true)}/>
+            <img src={item.image} alt="Image of the product" onLoad={() => setLoaded(true)} style={{display: loaded ? "block" : "none"}}/>
             <p>{description}</p>
             <div className="buttons">
                 <Button onClick={() => { navigate(`/store/${item.id}`); window.scroll({
